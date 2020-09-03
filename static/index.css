@@ -1,0 +1,59 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+.background{
+    background-color: black;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+}
+.heading{
+    text-align: center;
+    color: blanchedalmond;
+    font-family: 'Alata', sans-serif;
+    padding: 10px;
+}
+.heading_text{
+    font-size: 55px;
+}
+.search_from{
+    margin-top: 50px;
+    display: inline-block;
+}
+.content{
+    display: inline-block;
+    width: 75%;
+    margin-top: 30px;
+    padding-left: 20px;
+    font-size:25px ;
+}
+
+.content_form{
+    margin-top: 30px;
+    padding-left: 20px;
+    font-size:20px ;
+    color: white
+}
+.main_result{
+    text-align: left;
+    width: 100%;
+}
+.heading_text_tweets{
+    font-size: 30px ;
+    color: black;
+}
+.heading_tweet{
+    text-align: center;
+    color: black;
+    font-family: 'Alata', sans-serif;
+    padding: 10px;
+}
+.output{
+    text-align: center;
+    color: black;
+    font-family: 'Alata', sans-serif;
+    padding: 10px;
+    font-size: 15px;
+}
