@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="../static/faviconT.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
@@ -19,22 +19,29 @@
         <div class="heading">
             <h1 class="heading_text">TwitterBoy</h1>
         </div>
+        <div class="msg_error">
+            <h2>{{msg}}</h2>
+        </div>
         <div class="search_from">
             <form class="form-inline my-2 my-lg-0" method="POST" action="/result_analysis">
-                <input class="form-control mr-sm-2" type="search" placeholder="Type Twitter Handle" aria-label="Search" name="twitter_handle_typed">
+                <input class="form-control mr-sm-2" type="search" placeholder="Type Twitter Handle" aria-label="Search"
+                    name="twitter_handle_typed">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
         <div class="content_form">
-            <p class="text">Type the exact twitter handle of a person to get the sentiments of his/her 100 recent tweets.
+            <p class="text">Type the exact twitter handle of a person to get the sentiments of his/her 100 recent
+                tweets.
             </p>
         </div>
     </div>
     <div class="content">
-        <p class="text">'TwitterBoy' is Deep Learning based web application through which we can easily check the sentiments of tweets of a particular twitter handle.
+        <p class="text">'TwitterBoy' is Deep Learning based web application through which we can easily check the
+            sentiments of tweets of a particular twitter handle.
             This will allow us to get an idea of which tweet will have positive or negative impact.
         </p><br>
-        <p>A deep learning technique ' Natural Language Processing ' has been used to train a model with a large dataset of approx 1 Lac of tweets to ensure the correct
+        <p>A deep learning technique ' Natural Language Processing ' has been used to train a model with a large dataset
+            of approx 1 Lac of tweets to ensure the correct
             predictions.
         </p>
     </div>
@@ -44,11 +51,11 @@
             <h1 class="heading_text_tweets">{{handle}}</h1>
         </div>
         <hr>
-            {% for tweets,sentiment in output_result %}
-            <p>{{ tweets }}</p>
-            <h4>{{ sentiment}}</h4>
-            <hr>
-            {% endfor %}
+        {% for tweets,sentiment in output_result %}
+        <p>{{ tweets }}</p>
+        <h4>{{ sentiment}}</h4>
+        <hr>
+        {% endfor %}
     </div>
     <div class="output">
         <h1 class="heading_text_tweets">{{counter_positive}}</h1>

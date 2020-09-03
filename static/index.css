@@ -6,7 +6,7 @@ body{
 .background{
     background-color: black;
     width: 100%;
-    height: 300px;
+    height: 100%;
     text-align: center;
 }
 .heading{
@@ -39,6 +39,7 @@ body{
 .main_result{
     text-align: center;
     width: 100%;
+    margin-left: 20px;
 }
 .heading_text_tweets{
     font-size: 30px ;
@@ -56,4 +57,8 @@ body{
     font-family: 'Alata', sans-serif;
     padding: 10px;
     font-size: 15px;
+}
+.msg_error{
+    font-size: 2px ;
+    color:black;
 }
