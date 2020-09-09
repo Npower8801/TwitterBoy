@@ -5,8 +5,8 @@ import tweepy
 
 app = Flask(__name__)
 
-model = pickle.load(open("model_enhanved (1).pkl", 'rb'))
-vectorizer_obj = pickle.load(open("vectorizer_enhanced.pkl", 'rb'))
+model = pickle.load(open("model_enhanved.pkl", 'rb'))
+vectorizer_obj = pickle.load(open("vectorizer_enhanced (1).pkl", 'rb'))
 
 API_KEY = "3L094jJzc7ReFcSJRaDEIbxMA"
 API_SECRET_KEY = "gMGywEFtXWBbz9SDjjLNOc4PeWCe7zEKvREgqDOqNEP6uk0ycq"
