@@ -5,8 +5,8 @@ import tweepy
 
 app = Flask(__name__)
 
-model = pickle.load(open("model.pkl", 'rb'))
-vectorizer_obj = pickle.load(open("vectorizer.pkl", 'rb'))
+model = pickle.load(open("model_enhanved (1).pkl", 'rb'))
+vectorizer_obj = pickle.load(open("vectorizer_enhanced.pkl", 'rb'))
 
 API_KEY = "3L094jJzc7ReFcSJRaDEIbxMA"
 API_SECRET_KEY = "gMGywEFtXWBbz9SDjjLNOc4PeWCe7zEKvREgqDOqNEP6uk0ycq"
@@ -65,11 +65,11 @@ def twitterboy():
 def result_analysis():
     if request.method == 'POST':
         twitter_handle = request.form['twitter_handle_typed']
-        if twitter_handle == " ":
-            return False
+        if twitter_handle == "":
+            return render_template("index.html",msg = "*Please type a valid twitter handle")
         else:
             top_tweets = get_tweets(twitter_handle)
-            print(top_tweets[0])
+            print(len(top_tweets))
             top_tweets_cleaned = Clean_tweets(top_tweets)
             vectors_words = vectorizer_obj.transform(top_tweets_cleaned).toarray()
             predection = model.predict(vectors_words)
